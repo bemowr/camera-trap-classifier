@@ -1,5 +1,5 @@
 [![DOI](https://zenodo.org/badge/125009121.svg)](https://zenodo.org/badge/latestdoi/125009121)
-# Camera Trap Image Classifier
+# Camera Trap Image Classifier (Updated for tensorflow2)
 
 **Automatically identify animals in camera trap images by training and applying a deep neural network.**
 
