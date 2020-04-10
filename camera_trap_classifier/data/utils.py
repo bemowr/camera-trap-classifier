@@ -342,11 +342,11 @@ def n_records_in_tfr_dataset(tfr_path,
             cycle_length=num_parallel_reads))
     dataset = dataset.apply(tf.data.experimental.enumerate_dataset(start=0))
     dataset = dataset.apply(
-                tf.data.experimental.map_and_batch(
+                tf.data.Dataset.map(
                         lambda x, y: x,
                         batch_size=batch_size))
     dataset = dataset.repeat(1)
-    iterator = dataset.make_one_shot_iterator()
+    iterator = tf.compat.v1.data.make_one_shot_iterator(dataset)
     batch = iterator.get_next()
 
     # Loop once over the whole dataset
