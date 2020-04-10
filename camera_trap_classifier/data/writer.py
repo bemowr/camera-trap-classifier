@@ -185,7 +185,7 @@ class DatasetWriter(object):
         # a write is incomplete
 
         output_temp = output_file + '_temp'
-        with tf.python_io.TFRecordWriter(output_temp) as writer:
+        with tf.io.TFRecordWriter(output_temp) as writer:
 
             for i, record_id in enumerate(record_ids):
 
@@ -240,7 +240,7 @@ class DatasetWriter(object):
         # a write is incomplete
 
         output_temp = output_file + '_temp'
-        with tf.python_io.TFRecordWriter(output_temp) as writer:
+        with tf.io.TFRecordWriter(output_temp) as writer:
 
             for batch_i, (start_i, end_i) in enumerate(slices):
 
