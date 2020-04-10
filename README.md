@@ -64,10 +64,9 @@ The commands can be executed, for example on Windows, using Git BASH (https://gi
 conda create --no-default-packages -n ctc python=3.5
 # activate the environment
 source activate ctc
-# install tensorflow (non-GPU or GPU version)
-conda install tensorflow=1.12.0
-# conda install tensorflow-gpu=1.12.0
-pip install git+git://github.com/marco-willi/camera-trap-classifier.git
+install tensorflow (Same for cpu or gpu version in TF2)
+conda install tensorflow
+pip install git+git://github.com/bemowr/camera-trap-classifier.git
 ```
 
 
