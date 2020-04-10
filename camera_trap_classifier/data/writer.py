@@ -14,7 +14,8 @@ from camera_trap_classifier.data.image import (
 from camera_trap_classifier.data.utils import (
     slice_generator, estimate_remaining_time)
 
-tf.enable_eager_execution()
+# Not necessary in TF2
+#tf.enable_eager_execution()
 
 logger = logging.getLogger(__name__)
 
