@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='camera_trap_classifier',
-    url='https://github.com/marco-willi/camera-trap-classifier',
+    url='https://github.com/bemowr/camera-trap-classifier',
     author='Marco Willi',
-    version='2.1.0',
+    version='2.1.1',
     packages=find_packages(),
     package_data={'': ['*.yaml']},
     include_package_data=True,
@@ -12,8 +12,7 @@ setup(
         'pyyaml'
     ],
     extras_require={
-        'tf': ['tensorflow==1.12'],
-        'tf-gpu': ['tensorflow-gpu==1.12']
+        'tf': ['tensorflow>=2.0']
     },
     entry_points={
         'console_scripts': [
