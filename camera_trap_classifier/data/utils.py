@@ -336,15 +336,17 @@ def n_records_in_tfr_dataset(tfr_path,
 
     # read files in parallel
     dataset = tf.data.Dataset.from_tensor_slices(tfr_path)
-    dataset = dataset.apply(
-        tf.data.experimental.parallel_interleave(
-            lambda filename: tf.data.TFRecordDataset(filename),
-            cycle_length=num_parallel_reads))
-    dataset = dataset.apply(tf.data.experimental.enumerate_dataset(start=0))
-    dataset = dataset.apply(
-                tf.data.Dataset.map(
-                        lambda x, y: x,
-                        batch_size=batch_size))
+#    dataset = dataset.apply(
+#        tf.data.experimental.parallel_interleave(
+#            lambda filename: tf.data.TFRecordDataset(filename),
+#            cycle_length=num_parallel_reads))
+    dataset = dataset.interleve(
+        lambda filename: tf.data.TFRecordDataset(filename),
+        cycle_length = num_parallel_reads))
+    dataset = dataset.enumerate(start=0))
+    dataset = map(
+        lambda x, y: x,
+        batch_size=batch_size)
     dataset = dataset.repeat(1)
     iterator = tf.compat.v1.data.make_one_shot_iterator(dataset)
     batch = iterator.get_next()
