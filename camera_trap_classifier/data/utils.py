@@ -342,7 +342,7 @@ def n_records_in_tfr_dataset(tfr_path,
 #            cycle_length=num_parallel_reads))
     dataset = dataset.interleve(
         lambda filename: tf.data.TFRecordDataset(filename),
-        cycle_length = num_parallel_reads))
+        cycle_length = num_parallel_reads)
     dataset = dataset.enumerate(start=0))
     dataset = map(
         lambda x, y: x,
