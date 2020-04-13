@@ -314,10 +314,8 @@ def n_records_in_tfr(tfr_path):
 
 
 def n_records_in_tfr_dataset(tfr_path,
-                             n_parallel_file_reads = 1,
-                             batch_size = 1):
-#                             n_parallel_file_reads=50,
-#                             batch_size=5000):
+                             n_parallel_file_reads=50,
+                             batch_size=5000):
     """ Read the number of records in all tfr files using the Dataset API
         Input:
             tfr_path: list of tfr paths
@@ -351,8 +349,8 @@ def n_records_in_tfr_dataset(tfr_path,
         num_parallel_calls = n_parallel_file_reads)
     dataset = dataset.repeat(1)
     #iterator = tf.compat.v1.data.make_one_shot_iterator(dataset)
-    iterator = dataset.__iter__()
-    batch = iterator.get_next()
+    iterator = iter(dataset)
+    batch = next(iterator)
 
     # Loop once over the whole dataset
     with tf.Session() as sess:
