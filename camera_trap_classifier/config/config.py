@@ -16,7 +16,7 @@ class ConfigLoader(object):
     def _load_from_disk(self):
         if os.path.exists(self.filename):
             with open(self.filename, 'r') as fp:
-                self.cfg = yaml.load(fp)
+                self.cfg = yaml.load(fp, Loader = yaml.FullLoader)
         else:
             raise FileNotFoundError(
                 errno.ENOENT,
