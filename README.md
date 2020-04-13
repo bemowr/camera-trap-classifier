@@ -1,15 +1,15 @@
 [![DOI](https://zenodo.org/badge/125009121.svg)](https://zenodo.org/badge/latestdoi/125009121)
-# Camera Trap Image Classifier (Updated for tensorflow2)
+# Camera Trap Image Classifier (In Progress Update for TensorFlow2)
 
 **Automatically identify animals in camera trap images by training and applying a deep neural network.**
 
 This repository contains code and documentation to train and apply convolutional neural networks (CNN) for identifying animal species in photographs from camera traps. Please note that this repository will be updated to include more documentation and features.
 
-<img src="https://github.com/marco-willi/camera-trap-classifier/blob/master/docs/figures/sample_predictions.png"/>
+<img src="https://github.com/bemowr/camera-trap-classifier/blob/master/docs/figures/sample_predictions.png"/>
 
 *This figure shows examples of correctly classified camera trap images.*
 
-<img src="https://github.com/marco-willi/camera-trap-classifier/blob/master/docs/figures/sample_predictions_wrong.png"/>
+<img src="https://github.com/bemowr/camera-trap-classifier/blob/master/docs/figures/sample_predictions_wrong.png"/>
 
 *This figure shows examples of wrongly classified camera trap images (note the lower confidence values).*
 
@@ -37,12 +37,12 @@ The code has been implemented in Python (https://www.python.org) and is based on
 
 The software and all dependencies can be installed with this command (CPU version):
 ```
-pip install git+git://github.com/marco-willi/camera-trap-classifier.git#egg=camera_trap_classifier[tf]
+pip install git+git://github.com/bemowr/camera-trap-classifier.git#egg=camera_trap_classifier[tf]
 ```
 
 To install the GPU version use this command:
 ```
-pip install git+git://github.com/marco-willi/camera-trap-classifier.git#egg=camera_trap_classifier[tf-gpu]
+pip install git+git://github.com/bemowr/camera-trap-classifier.git#egg=camera_trap_classifier[tf-gpu]
 ```
 
 The software can then be used from the command line (see below for more details):
