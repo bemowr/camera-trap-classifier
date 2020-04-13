@@ -314,8 +314,10 @@ def n_records_in_tfr(tfr_path):
 
 
 def n_records_in_tfr_dataset(tfr_path,
-                             n_parallel_file_reads=50,
-                             batch_size=5000):
+                             n_parallel_file_reads = 1,
+                             batch_size = 10):
+#                             n_parallel_file_reads=50,
+#                             batch_size=5000):
     """ Read the number of records in all tfr files using the Dataset API
         Input:
             tfr_path: list of tfr paths
